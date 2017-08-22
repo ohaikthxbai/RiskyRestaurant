@@ -1,0 +1,12 @@
+<h1>Check your risk:</h1>
+
+<div class="col-md-6">
+<h3>Restaurants:</h3>
+<ul>
+  {{#each restaurant}}
+      <li>
+       {{this.DBA_NAME}} @ {{this.ADDRESS}} - {{this.RISK}}
+      </li><br>
+  {{/each}}
+</ul>
+</div>

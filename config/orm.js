@@ -11,24 +11,26 @@ var orm = {
           cb(result);
     });
   },
-  insertOne: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO "+table+" ("+cols+", devoured, date) VALUES ( '"+vals+"' , 0 , curdate() );";
+  selectRestaurant: function(table, vals, cb) {
+    var queryString = "SELECT DBA_NAME, RISK, ADDRESS FROM "+table+" WHERE DBA_NAME = '"+vals+"' LIMIT 10;";
     connection.query(queryString, vals, function(err, result) {
         if (err) {
             throw err;
           }
           cb(result);
-    });
-  },
-  updateOne: function (table, objColVals, condition, cb) {
-    var queryString = "UPDATE  "+table+" SET devoured =  1 WHERE "+condition+ ";";
-    connection.query(queryString, function(err, result) {
-        if (err) {
-            throw err;
-          }
-          cb(result);
+//          console.log(result);
     });
   }
+  // ,
+  // updateOne: function (table, objColVals, condition, cb) {
+  //   var queryString = "UPDATE  "+table+" SET devoured =  1 WHERE "+condition+ ";";
+  //   connection.query(queryString, function(err, result) {
+  //       if (err) {
+  //           throw err;
+  //         }
+  //         cb(result);
+  //   });
+  // }
 };
 
 module.exports = orm;

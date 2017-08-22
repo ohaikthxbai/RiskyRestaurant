@@ -1,6 +1,14 @@
 var mysql = require("mysql");
 var connection;
 
+    // var connection = mysql.createConnection({
+    //   port: 8889,
+    //   host: "127.0.0.1",
+    //   user: "root",
+    //   password: "root",
+    //   database: "restaurant_db"
+    // });
+
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -9,7 +17,7 @@ if (process.env.JAWSDB_URL) {
   user: "root",
   password: "root",
   port: 8889,
-  database: "burgers_db"
+  database: "restaurant_db"
   });
 };
 
@@ -21,4 +29,4 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
-module.exports = connection.js;
+module.exports = connection;
