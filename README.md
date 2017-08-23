@@ -7,6 +7,10 @@ Authors (A-Z)
 - Livio
 - Robert
 
+Heroku
+--
+https://riskyrestaurant.herokuapp.com/?
+
 Problem
 ---
 Have you ever wondered if the restaurant you are taking the love of your life to is clean or dirty? If they passed government regulations and inspections? Look no further.
@@ -25,7 +29,7 @@ Cleanliness is determined as follows:
 
 With these two indicators, the user now possesses the ability to choose a clean or dirty restaurant that they would like to indulge in. 
 
-Step by step
+Step By Step
 ---
 blah blah blah
 
