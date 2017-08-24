@@ -32,16 +32,29 @@
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
         line-height: 1.42em;
-        color: #A7A1AE;
-        background-color: grey;
+        color: white;
+        background-color: black;
     }
 
-    h1 {
-        font-size: 3em;
-        font-weight: 300;
-        line-height: 1em;
+    .button2:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .button {
+        background-color: #4CAF50;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
         text-align: center;
-        color: #4DC3FA;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
     }
 
     .container th h1 {
@@ -93,29 +106,9 @@
         color: lime;
     }
 
-    .container tr:hover {
-        background-color: #464A52;
-    }
-
     .container td:hover {
-        background-color: grey;
-        color: #403E10;
-        font-weight: bold;
-
-        box-shadow: black -1px 1px, black -2px 2px, black -3px 3px, black -4px 4px, black -5px 5px, black -6px 6px;
-        transform: translate3d(6px, -6px, 0);
-
-        transition-delay: 0s;
-        transition-duration: 0.4s;
+        background-color: darkgray;
         transition-property: all;
-        transition-timing-function: line;
-    }
-
-    @media (max-width: 800px) {
-        .container td:nth-child(4),
-        .container th:nth-child(4) {
-            display: none;
-        }
     }
 </style>
 
@@ -147,40 +140,35 @@
                 <td>123 Hardknocks Rd CHICAGO IL 60660</td>
                 <td>1 (dirty)</td>
                 <td>Fail</td>
-                <td><button class="w3-button w3-xlarge w3-theme-light" onclick="document.getElementById('id01').style.display='block'"
-                        style="font-weight:900;"> View Violations </button></td>
+                <td><button class="button button2" onclick="document.getElementById('id01').style.display='block'"> View Violations </button></td>
             </tr>
             <tr>
-                <td>Arbyes</td>
+                <td>Arby's</td>
                 <td>123 Hardknocks Rd CHICAGO IL 60660</td>
                 <td>1 (dirty)</td>
                 <td>Fail</td>
-                <td><button class="w3-button w3-xlarge w3-theme-light" onclick="document.getElementById('id01').style.display='block'"
-                        style="font-weight:900;"> View Violations </button></td>
+                <td><button class="button button2" onclick="document.getElementById('id01').style.display='block'"> View Violations </button></td>
             </tr>
             <tr>
                 <td>McDs</td>
                 <td>123 Hardknocks Rd CHICAGO IL 60660</td>
                 <td>1 (dirty)</td>
                 <td>Fail</td>
-                <td><button class="w3-button w3-xlarge w3-theme-light" onclick="document.getElementById('id01').style.display='block'"
-                        style="font-weight:900;"> View Violations </button></td>
+                <td><button class="button button2" onclick="document.getElementById('id01').style.display='block'"> View Violations </button></td>
             </tr>
             <tr>
                 <td>Taco Bell</td>
                 <td>123 Hardknocks Rd CHICAGO IL 60660</td>
                 <td>1 (dirty)</td>
                 <td>Fail</td>
-                <td><button class="w3-button w3-xlarge w3-theme-light" onclick="document.getElementById('id01').style.display='block'"
-                        style="font-weight:900;"> View Violations </button></td>
+                <td><button class="button button2" onclick="document.getElementById('id01').style.display='block'"> View Violations </button></td>
             </tr>
             <tr>
                 <td>Subway</td>
                 <td>123 Hardknocks Rd CHICAGO IL 60660</td>
                 <td>1 (dirty)</td>
                 <td>Fail</td>
-                <td><button class="w3-button w3-xlarge w3-theme-light" onclick="document.getElementById('id01').style.display='block'"
-                        style="font-weight:900;"> View Violations </button></td>
+                <td><button class="button button2" onclick="document.getElementById('id01').style.display='block'"> View Violations </button></td>
             </tr>
         </tbody>
     </table>
