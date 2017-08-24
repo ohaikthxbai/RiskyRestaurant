@@ -1,5 +1,5 @@
 {
-  "name": "burger",
+  "name": "riskyrestaurant",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/robertobrooks/burger.git"
+    "url": "git+https://github.com/robertobrooks/riskyrestaurant.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/robertobrooks/burger/issues"
+    "url": "https://github.com/robertobrooks/RiskyRestaurant/issues"
   },
-  "homepage": "https://github.com/robertobrooks/burger#readme",
+  "homepage": "https://github.com/robertobrooks/RiskyRestaurant#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.4",

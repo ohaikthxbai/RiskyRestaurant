@@ -1,14 +1,8 @@
+//Set the dependencies
 var mysql = require("mysql");
 var connection;
 
-    // var connection = mysql.createConnection({
-    //   port: 8889,
-    //   host: "127.0.0.1",
-    //   user: "root",
-    //   password: "root",
-    //   database: "restaurant_db"
-    // });
-
+//Set up the connection to the database / Heroku
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -21,6 +15,7 @@ if (process.env.JAWSDB_URL) {
   });
 };
 
+//Connect to the database
 connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);

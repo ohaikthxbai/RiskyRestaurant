@@ -1,44 +1,11 @@
-{{!-- <div class="col-md-6">
-<h2>Available Burgers:</h2>
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-      <li>
-        {{this.id}}. {{this.burger_name}}
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="true">
-          <button class="btn btn-danger" type="submit">Devour!</button>
-        </form>
-      </li><br>
-    {{/unless}}
-  {{/each}}
-</ul>
-</div> --}}
-
-
-
-<h3>What is the name of the restaurant?</h3>
-<div class="col-md-12">
+<div class="inner cover">
+  <h1 class="cover-heading">Discover the health risks of your favorite restaurants</h1>
+  <p class="lead"></p>
   <form action="/restaurant/submit" method="POST">
-  <label class="center" for="ca"></label>
-    <input type="text" id="ca" name="DBA_NAME" class="mytext">
-    <br>
-    <button class="center btn btn-danger" type="submit">Find!</button>
+    <label class="center" for="ca"></label>
+    <p><input type="text" id="ca" name="DBA_NAME" class="mytext" placeholder="Enter Restaurant Name" required autofocus></p>
+    <p class="lead">
+      <button class="center btn btn-success" type="submit">I'm feeling risky</button>
+    </p>
   </form>
 </div>
-
-
-{{!-- 
-<div class="col-md-6">
-<h2>Eaten Burgers</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if this.devoured}}
-      <li>
-        {{this.id}}. {{this.burger_name}}
-      </li>
-    {{/if}}
-  {{/each}}
-</ul>
-</div> --}}
