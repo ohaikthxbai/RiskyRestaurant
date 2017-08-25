@@ -3,9 +3,10 @@
   <p class="lead"></p>
   <form action="/restaurant/submit" method="POST">
     <label class="center" for="ca"></label>
-    <p><input type="text" id="ca" name="DBA_NAME" class="mytext" placeholder="Enter Restaurant Name" required autofocus></p>
+    <p><input type="text" id="ca" name="DBA_NAME" class="mytext" placeholder="Enter restaurant name" onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Enter Restaurant Name'"></p>
     <p class="lead">
-      <button class="center btn btn-success" type="submit">I'm feeling risky</button>
+      <button class="cover btn btn-lg center btn btn-success" type="submit">I'm feeling risky</button>
     </p>
   </form>
 </div>
