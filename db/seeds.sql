@@ -1,3 +1,6 @@
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Cheeseburger', 0, curdate());
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Chicken Sandwich', 0, curdate());
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Big Mac', 0, curdate());
+INSERT INTO USER (USERNAME, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, ADDRESS, CITY, STATE, ZIPCODE, CREATED_DATE)
+VALUES ('ROB', 'ROB', 'ROB@MAIL.COM', 'ROB', 'BROOKS', '123 MAIN ST', 'CHICAGO', 'IL', '60601', '2017-08-24');
+
+INSERT INTO COMMENT
+(USER_ID, LICENSE_NO, COMMENT, CREATED_DATE)
+VALUES (1, 47876, 'Their food is delish and clean', '2017-08-24');

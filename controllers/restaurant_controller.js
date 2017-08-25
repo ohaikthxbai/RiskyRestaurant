@@ -24,9 +24,26 @@ router.get("/restaurant/:DBA_NAME", function (req, res) {
       DBA_NAME
     ], function (data) {
       res.render("result", { restaurant: data });
-      console.log(data);
     });
-
 });
+
+//Post Method after user clicks submit
+router.post('/info/:LICENSE_NO', function (req, res, next) {
+    var LICENSE_NO = req.params.LICENSE_NO;
+    res.redirect('/info/' + LICENSE_NO);
+  });
+
+//Get Result Page after user query
+router.get("/info/:LICENSE_NO", function (req, res) {
+    var LICENSE_NO = req.params.LICENSE_NO;
+    restaurant.selectRestaurantByLicense([
+      "RESTAURANT"
+    ], [
+        LICENSE_NO
+      ], function (data) {
+        res.render("restaurant", { restaurant: data });
+        console.log(data);
+      });
+  }); 
 
 module.exports = router;
