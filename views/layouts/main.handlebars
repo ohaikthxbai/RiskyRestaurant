@@ -13,38 +13,36 @@
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
         crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
     <link rel="shortcut icon" href="/assets/images/rr-logo.png" />
     <link rel="stylesheet" type="text/css" href="/assets/css/restaurant_style.css">
 </head>
 
 <body>
-    <div class="site-wrapper">
-        <div class="site-wrapper-inner">
-            <div class="cover-container">
-                <div class="masthead clearfix">
-                    <div class="inner">
-                        <h3 class="masthead-brand">Risky Restaurants</h3>
-                        <nav class="nav nav-masthead">
-                            <a class="nav-link active" href="#">Home</a>
-                            <a class="nav-link" href="#">Register</a>
-                            <a class="nav-link" href="#">Log in</a>
-                        </nav>
-                    </div>
-                    {{{ body }}}
-                </div>
+    <img class="translucent slant-top" src="/assets/images/navbar-diagonal-tl.png" alt="">
+    <div>
+        <h1 class="title">Risky Restaurant</h1>
+    </div>
+    <nav class="translucent fixed-top navbar">
+        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link" href="#">Register</a>
+        <a class="nav-link" href="#">Log in</a>
+    </nav>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 main">
+                {{{ body }}}
             </div>
+            <div class="col-md-4"></div>
         </div>
     </div>
+    <img class="translucent fixed-bottom slant-bottom" src="assets/images/navbar-diagonal-bl.png" alt="">
+    <footer class="translucent footer fixed-bottom">
 
-{{!-- <div class="container-fluid">
-    <footer class="footer fixed-bottom">
-        <div class="container">
-            <p>&copy; 2017 DH-JG-LB-RB</p>
-        </div>
     </footer>
-</div> --}}
-
 </body>
 
 </html>

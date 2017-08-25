@@ -1,12 +1,9 @@
-<div class="inner cover">
-  <h1 class="cover-heading">Discover the health risks of your favorite restaurants</h1>
-  <p class="lead"></p>
-  <form action="/restaurant/submit" method="POST">
-    <label class="center" for="ca"></label>
-    <p><input type="text" id="ca" name="DBA_NAME" class="mytext" placeholder="Enter restaurant name" onfocus="this.placeholder = ''"
-        onblur="this.placeholder = 'Enter Restaurant Name'"></p>
-    <p class="lead">
-      <button class="cover btn btn-lg center btn btn-success" type="submit">I'm feeling risky</button>
-    </p>
-  </form>
-</div>
+<h1 class="main-heading">Discover the health risks of your favorite restaurants</h1>
+<p class="sub-heading">See information on cleanliness and inspections</p>
+<form action="/restaurant/submit" method="POST">
+  <p><input type="text" id="ca" name="DBA_NAME" class="mytext form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Restaurant Name'"
+      placeholder="Enter Restaurant Name"></p>
+  <p class="lead">
+    <button class="btn btn-lg btn-danger" type="submit">I'm feeling risky</button>
+  </p>
+</form>
