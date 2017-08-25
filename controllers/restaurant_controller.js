@@ -11,6 +11,7 @@ router.get("/", function (req, res, next) {
 //Post Method after user clicks submit
 router.post('/restaurant/submit', function (req, res, next) {
     var DBA_NAME = req.body.DBA_NAME;
+    DBA_NAME = DBA_NAME.replace(/[^\w\s]/gi, '');
     res.redirect('/restaurant/' + DBA_NAME);
   });
 

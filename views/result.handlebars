@@ -1,17 +1,30 @@
+<br>
 <h1>Check your risk:</h1>
-
-<div class="col-md-12">
-<h3>Restaurants:</h3>
-<ul>
+<hr>
+<div class="container-fluid">
+{{!-- <h3>Restaurants:</h3> --}}
+ <table class="table table-hover text-left">
+    <thead>
+      <tr>
+        <th>Restaurant Name</th>
+        <th>Address</th>
+        <th>Risk</th>
+      </tr>
+    </thead>
+    <tbody>
   {{#each restaurant}}
-      <li>
-       {{this.DBA_NAME}} @ {{this.ADDRESS}} - {{this.RISK}}
-      </li><br>
+      <tr>
+       <td>{{this.DBA_NAME}}</td>
+       <td>{{this.ADDRESS}}</td>
+       <td>{{this.RISK}}</td>
+      </tr>
   {{/each}}
-</ul>
+    </tbody>
+</table>
 </div>
 
-
+<div class="container-fluid">
 <form method="get" action="/">
     <button class="center btn btn-danger" type="submit">Go Back</button>
 </form>
+</div>
