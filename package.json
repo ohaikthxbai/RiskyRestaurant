@@ -23,12 +23,12 @@
   "homepage": "https://github.com/robertobrooks/RiskyRestaurant#readme",
   "dependencies": {
     "aws-sdk": "latest",
-    "body-parser": "latest",
+    "body-parser": "^1.17.2",
     "ejs": "latest",
-    "express": "latest",
-    "express-handlebars": "latest",
-    "method-override": "latest",
-    "mysql": "latest"
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1"
   },
   "devDependencies": {},
   "description": "Authors (A-Z) --- - Daniel - Justin - Livio - Robert"
