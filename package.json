@@ -2,6 +2,7 @@
   "name": "riskyrestaurant",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -21,12 +22,14 @@
   },
   "homepage": "https://github.com/robertobrooks/RiskyRestaurant#readme",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.4",
-    "express-handlebars": "^3.0.0",
-    "method-override": "^2.3.9",
-    "mysql": "^2.14.1"
+    "aws-sdk": "latest",
+    "body-parser": "latest",
+    "ejs": "latest",
+    "express": "latest",
+    "express-handlebars": "latest",
+    "method-override": "latest",
+    "mysql": "latest"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "Authors (A-Z) --- - Daniel - Justin - Livio - Robert"
 }
