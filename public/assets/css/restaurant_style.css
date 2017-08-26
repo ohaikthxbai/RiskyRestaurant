@@ -179,3 +179,23 @@ th {
         height: 30px;
     }
 }
+
+@media only screen and (max-width: 414px) {
+    .slant-top,
+    .slant-bottom,
+    footer {
+        display: none;
+    }
+    .title {
+        margin-top: 60px;
+        text-align: center;
+        position: absolute;
+        
+    }
+    .navbar {
+        height: 50px;
+        justify-content: center;
+        padding: 0px;
+    }
+}
+
