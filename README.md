@@ -1,7 +1,7 @@
-# RiskyRestaurant
+# Risky Restaurants
 
 Authors (A-Z)
----
+
 - Daniel
 - Justin
 - Livio
