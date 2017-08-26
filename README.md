@@ -7,9 +7,9 @@ Authors (A-Z)
 - Livio
 - Robert
 
-Heroku
+## URL
 --
-https://riskyrestaurant.herokuapp.com/?
+http://riskyrestaurants.com/
 
 Problem
 ---
