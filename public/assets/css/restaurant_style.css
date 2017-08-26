@@ -12,6 +12,17 @@ body {
     background-size: cover;
 }
 
+.table {
+    background-color: rgba(33, 59, 50, 0.8) ;
+    color: red;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: white;
+    color: black;
+}
+
+
 .translucent {
     opacity: .7;
 }
