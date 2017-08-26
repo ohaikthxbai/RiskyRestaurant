@@ -1,13 +1,17 @@
-<div class="main">
-  <div class = "well">
-  <h1 class="main-heading">How clean is my favorite restaurant?</h1>
+<div class="col-md-4"></div>
+<div class="col-md-4">
+  <div class="main">
+    <div class="well">
+      <h1 class="main-heading">How clean is my favorite restaurant?</h1>
+    </div>
+    <form action="/restaurant/submit" method="POST">
+      <p><input type="text" id="ca" name="DBA_NAME" class="mytext form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Restaurant Name'"
+          placeholder="Enter Restaurant Name"></p>
+      <p class="submit-btn">
+        <button class="btn btn-lg btn-danger" type="submit">I'm feeling risky</button>
+      </p>
+    </form>
+    {{!--<p class="sub-heading">See information on cleanliness and inspections</p> --}}
   </div>
-  <form action="/restaurant/submit" method="POST">
-    <p><input type="text" id="ca" name="DBA_NAME" class="mytext form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Restaurant Name'"
-        placeholder="Enter Restaurant Name"></p>
-    <p class="submit-btn">
-      <button class="btn btn-lg btn-danger" type="submit">I'm feeling risky</button>
-    </p>
-  </form>
-  {{!-- <p class="sub-heading">See information on cleanliness and inspections</p> --}}
 </div>
+<div class="col-md-4"></div>
