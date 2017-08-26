@@ -9,7 +9,7 @@
         <th>Restaurant Name</th>
         <th>Address</th>
         <th>Risk</th>
-        <th></th>
+        <th>Inspection Date</th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +18,7 @@
        <td>{{this.DBA_NAME}}</td>
        <td>{{this.ADDRESS}}</td>
        <td>{{this.RISK}}</td>
+       <td>{{this.DATE}}</td>
        <td><form action="/info/{{LICENSE_NO}}" method="POST"><button class="btn btn-danger" type="submit">Info</button></form></td>
       </tr>
   {{/each}}
