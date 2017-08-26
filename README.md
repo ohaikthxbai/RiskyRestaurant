@@ -1,6 +1,6 @@
 # Risky Restaurants
 
-Authors (A-Z)
+## Authors (A-Z)
 
 - Daniel
 - Justin
