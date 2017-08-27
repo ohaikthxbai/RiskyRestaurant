@@ -1,4 +1,3 @@
-<div class="result-hb">
 <br>
 <h1>Check your risk:</h1>
 <hr>
@@ -9,12 +8,8 @@
       <tr>
         <th>Restaurant Name</th>
         <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Zip</th>
         <th>Risk</th>
         <th>Inspection Date</th>
-        <th>More Info</th>
       </tr>
     </thead>
     <tbody>
@@ -22,20 +17,17 @@
       <tr>
        <td>{{this.DBA_NAME}}</td>
        <td>{{this.ADDRESS}}</td>
-       <td>{{this.CITY}}</td>
-       <td>{{this.STATE}}</td>
-       <td>{{this.ZIP}}</td>
        <td>{{this.RISK}}</td>
-       <td>{{this.INSPECTION_DATE}}</td>
+       <td>{{this.DATE}}</td>
        <td><form action="/info/{{LICENSE_NO}}" method="POST"><button class="btn btn-danger" type="submit">Info</button></form></td>
       </tr>
   {{/each}}
     </tbody>
 </table>
 </div>
-  <div class="container-fluid">
-    <form method="get" action="/">
-      <button class="center btn btn-danger" type="submit">Go Back</button>
-    </form>
-  </div>
+
+<div class="container-fluid">
+<form method="get" action="/">
+    <button class="center btn btn-danger" type="submit">Go Back</button>
+</form>
 </div>

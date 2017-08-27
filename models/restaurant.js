@@ -17,7 +17,16 @@ var restaurant = {
     orm.selectRestaurantByLicense(colVals, condition, function(res) {
       cb(res);
     });
+  },
+
+  createComment: function(colVals,val,cb){
+    orm.createComment("COMMENT",cols, vals, function(res) {
+      cb(res);
+    });
+
   }
+
+
 };
 
 module.exports = restaurant;

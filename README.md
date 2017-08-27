@@ -22,9 +22,9 @@ With Risky Restaurant, the user has the ability to see which restaurants have pa
 Just simply type the name of the restaurant and choose from the list the one you are looking for!
 Cleanliness is determined as follows: 
 1)	A scale of 1-3.
-  -	1 => Not clean.
-  - 2 => Moderate
-  -	3 => Extremely clean.
+  -	1 => not clean.
+  - 2 => moderate
+  -	3 => extremely clean.
 2)	Pass or Fail inspection.
 
 With these two indicators, the user now possesses the ability to choose a clean or dirty restaurant that they would like to indulge in. 

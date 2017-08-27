@@ -1,27 +1,33 @@
-<div class="restaurant-hb">
-    <br>
-    <h1>Check your risk:</h1>
-    <hr>
-    <div class="container-fluid">
-        {{!--<h3>Restaurants:</h3> --}}
-        
-        <table class="table table-hover text-left">
-            <tbody>
-                {{#each restaurant}}
-                <h2>{{this.DBA_NAME}} - {{this.RISK}}</h2>
-                <tr>
-                    <td>{{this.USERNAME}}</td>
-                    <td>{{this.COMMENT}}</td>
-                    {{!--<td>{{this.COMMENT_DATE}}</td> --}}
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-    </div>
+<br>
+<h1>Check your risk:</h1>
+<hr>
+<div class="container-fluid">
+{{!-- <h3>Restaurants:</h3> --}}
 
-    <div class="container-fluid">
-        <form method="get" action="/">
-            <button class="center btn btn-danger" type="submit">Go Back</button>
-        </form>
-    </div>
+
+ <table class="table table-hover text-left">
+    <tbody>
+  {{#each restaurant}}
+  <h2>{{this.DBA_NAME}} - {{this.RISK}}</h2>
+      <tr>
+       <td>{{this.USERNAME}}</td>
+        <form action="/restaurant/comment" method="POST">
+    <p><input type="text" id="USERCOMMENT" name="COMMENT" class="mytext form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Comments About This resterant'"
+        placeholder="Enter COMMENT"></p>
+    <p class="submit-btn">
+      <button class="btn btn-lg btn-danger" type="submit">Submit Comment</button>
+    </p>
+  </form>
+       <td>{{this.COMMENT}}</td>
+       {{!-- <td>{{this.COMMENT_DATE}}</td> --}}
+      </tr>
+  {{/each}}
+    </tbody>
+</table>
+</div>
+
+<div class="container-fluid">
+<form method="get" action="/">
+    <button class="center btn btn-danger" type="submit">Go Back</button>
+</form>
 </div>
