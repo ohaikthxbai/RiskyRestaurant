@@ -6,30 +6,37 @@
 
         <table class="table table-hover text-left">
             <tbody>
-                {{#each restaurant}}  
+                
                 <div class="restInfo">
                     <div class="DbaName">
-                        <h2>{{this.DBA_NAME}}</h2>
-                        <h4>{{this.ADDRESS}}, {{this.CITY}}, {{this.STATE}} {{this.ZIP}}</h4>
+                        <h2>{{restaurant.0.DBA_NAME}}</h2>
+                        <h4>{{restaurant.0.ADDRESS}}, {{restaurant.0.CITY}}, {{restaurant.0.STATE}} {{restaurant.0.ZIP}}</h4>
                     </div>
                 <br>
                     <div class="risk">
-                        <h4>DATE: {{this.INSPECTION_DATE}}</h4>
-                        <h4>RESULTS: {{this.RESULTS}}</h4>
-                        <h4>RISK LEVEL: {{this.RISK}}</h4>
+                        <h4>DATE: {{restaurant.0.INSPECTION_DATE}}</h4>
+                        <h4>RESULTS: {{restaurant.0.RESULTS}}</h4>
+                        <h4>RISK LEVEL: {{restaurant.0.RISK}}</h4>
                     </div>      
-                    <br>
-                    {{this.VIOLATIONS}} 
+            
+                    
                 </div>
-                    {{/each}}
+                {{restaurant.0.VIOLATIONS}} 
+                    
                     <br>
                 
                 <h1> Write a Comment </h1>
+                
+                {{#each restaurant}} 
+  
                 <tr> 
+                 
                     <td>{{this.USERNAME}}</td>
                     <td>{{this.COMMENT}}</td>
+                
                     {{!--<td>{{this.COMMENT_DATE}}</td> --}}
                 </tr>  
+                {{/each}}
                   
             </tbody>
         </table>
