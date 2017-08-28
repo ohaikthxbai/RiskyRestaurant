@@ -1,26 +1,43 @@
 <div class="restaurant-hb">
     <br>
-    <h1>Check your risk:</h1>
-    <hr>
+
     <div class="container-fluid">
         {{!--<h3>Restaurants:</h3> --}}
-        
+
         <table class="table table-hover text-left">
             <tbody>
-                {{#each restaurant}}
-                <h2>{{this.DBA_NAME}} - {{this.RISK}}</h2>
-                <tr>
+                {{#each restaurant}}  
+                <div class="restInfo">
+                    <div class="DbaName">
+                        <h2>{{this.DBA_NAME}}</h2>
+                        <h4>{{this.ADDRESS}}, {{this.CITY}}, {{this.STATE}} {{this.ZIP}}</h4>
+                    </div>
+                <br>
+                    <div class="risk">
+                        <h4>DATE: {{this.INSPECTION_DATE}}</h4>
+                        <h4>RESULTS: {{this.RESULTS}}</h4>
+                        <h4>RISK LEVEL: {{this.RISK}}</h4>
+                    </div>      
+                    <br>
+                    {{this.VIOLATIONS}} 
+                </div>
+                    {{/each}}
+                    <br>
+                
+                <h1> Write a Comment </h1>
+                <tr> 
                     <td>{{this.USERNAME}}</td>
                     <td>{{this.COMMENT}}</td>
                     {{!--<td>{{this.COMMENT_DATE}}</td> --}}
-                </tr>
-                {{/each}}
+                </tr>  
+                  
             </tbody>
         </table>
     </div>
 
     <div class="container-fluid">
         <form method="get" action="/">
+            <br>
             <button class="center btn btn-danger" type="submit">Go Back</button>
         </form>
     </div>
