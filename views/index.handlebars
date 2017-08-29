@@ -10,6 +10,13 @@
       <p><input type="text" id="ca" name="DBA_NAME" class="mytext form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Restaurant Name'"
           placeholder="Enter Restaurant Name" pattern ="[^@#$%^*!()_+-={}|;:<>./?\x22\x5b\x5d\x5c]+"
             1 Comment required></p>
+            <div id="selects">
+            <span id="select1Div" class="float-right" style="float:left;margin-right:15px;">
+              <select name="firstSelect" id="firstSelect">
+                <option>All Neighborhoods</option>
+              </select>
+              </span>        
+</div>
       <p class="submit-btn">
         <button class="btn btn-lg btn-danger" type="submit">I'm feeling risky</button>
       </p>
@@ -20,3 +27,13 @@
 <div class="col-md-4"></div>
         </div>
         </div>
+
+<script>
+  var options1 = ['Lakeview', 'Lincoln Park', 'Old Town'];
+   for (var i = 0; i < options1.length; i++) {
+    var opt = document.createElement('option');
+    opt.value = options1[i];
+    opt.text = options1[i];
+    firstSelect.options.add(opt);
+  }
+</script>
