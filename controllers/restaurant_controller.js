@@ -42,6 +42,22 @@ router.get("/restaurant/:DBA_NAME", function (req, res) {
     });
 });
 
+
+router.get("/dashboard", function (req, res, next) {
+  res.render('../views/dashboard.handlebars');
+});
+
+// router.get("/dashboard", function (req, res) {
+//   var comment = req.params.COMMENT;
+//   comment.selectComment([
+//     "Comment"
+//   ], [
+      
+//     ], function (data) {
+//       res.render("result", { comment: data });
+//     });
+// });
+
 //Post Method after user clicks submit
 router.post('/info/:LICENSE_NO', function (req, res, next) {
     var LICENSE_NO = req.params.LICENSE_NO;
