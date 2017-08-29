@@ -24,6 +24,7 @@
   "dependencies": {
     "aws-sdk": "latest",
     "body-parser": "^1.17.2",
+    "chart.js": "^2.6.0",
     "ejs": "latest",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
