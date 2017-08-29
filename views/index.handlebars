@@ -1,40 +1,64 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <div class="main">
-        <div class="well">
-          <h1 class="main-heading">How clean is my favorite restaurant?</h1>
-        </div>
-        <form action="/restaurant/submit" method="POST">
-          <p><input type="text" id="ca" name="DBA_NAME" class="mytext form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Restaurant Name'"
-              placeholder="Enter Restaurant Name" pattern="[^@#$%^*!()_+-={}|;:<>./?\x22\x5b\x5d\x5c]+" 1 Comment required></p>
-          <div id="selects">
-            <span id="select1Div" class="float-right" style="float:left;margin-right:15px;">
+<br>
+<br>
+<div class="indexMain">
+
+  <section id="welcomeSection">
+    <h1> How Clean Is My Favorite Restaurant? </h1>
+    <form action="/restaurant/submit" method="POST">
+      <p><input type="text" id="ca" name="DBA_NAME" class="mytext form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Restaurant Name'"
+          placeholder="Enter Restaurant Name" pattern="[^@#$%^*!()_+-={}|;:<>./?\x22\x5b\x5d\x5c]+" 1 Comment required></p>
+      <div id="selects">
+        <span id="select1Div" class="float-right" style="float:left;margin-right:150px;">
               <select name="firstSelect" id="firstSelect">
                 <option>All Neighborhoods</option>
               </select>
               </span>
-          </div>
-          <p class="submit-btn">
-            <button class="btn btn-lg btn-danger" type="submit">I'm feeling risky</button>
-          </p>
-        </form>
-        {{!--
-        <p class="sub-heading">See information on cleanliness and inspections</p> --}}
       </div>
-    </div>
-    <div class="col-md-4"></div>
-  </div>
+      <p class="submit-btn">
+        <button class="btn btn-lg btn-danger" type="submit">I'm feeling risky</button>
+      </p>
+    </form>
+    {{!-- <p class="sub-heading">See information on cleanliness and inspections</p> --}}
+
+  </section>
+  <br>
+  <br>
+
+  <section id="whySection">
+    <h1> Why Should You Care? </h1>
+    <h4> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation </h4>
+  </section>
+  <br>
+  <br>
+
+  <section id="tipSection">
+    <h1> Simple Instructions: </h1>
+      <ol class="instruction-list">
+        <li>1. Enter the restaurant you would like to visit and select the neighborhood.</li>
+        <br>
+        <li>3. Click <button class="btn btn-lg btn-danger">I'm feeling risky</button>.</li>
+        <br>
+        <li>4. Find which restaurant you are looking for in the table and select <button class="btn btn-danger" type="submit">Risk</button>.</li>
+        <br>
+        <li>5. This page indicates when that restaurant was inspected, results, and risk level.</li>
+        <br>
+        <li>6. Leave comments on experences that you have had with that restaurant!</li>
+      </ol>
+  </section>
+
+  <br>
+  <br>
+
+
+  <script>
+    var options1 = ['Lakeview', 'Lincoln Park', 'Old Town'];
+    for (var i = 0; i < options1.length; i++) {
+      var opt = document.createElement('option');
+      opt.value = options1[i];
+      opt.text = options1[i];
+      firstSelect.options.add(opt);
+    }
+  </script>
+
 </div>
-
-<script>
-  var options1 = ['Lakeview', 'Lincoln Park', 'Old Town'];
-  for (var i = 0; i < options1.length; i++) {
-    var opt = document.createElement('option');
-    opt.value = options1[i];
-    opt.text = options1[i];
-    firstSelect.options.add(opt);
-  }
-
-</script>
