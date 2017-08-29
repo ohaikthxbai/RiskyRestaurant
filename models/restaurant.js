@@ -8,11 +8,6 @@ var restaurant = {
       cb(res);
     });
   },
-  numberRestaurant: function(colVals, condition, cb) {
-    orm.numberRestaurant(colVals, condition, function(res) {
-      cb(res);
-    });
-  },
   selectRestaurant: function(colVals, condition, cb) {
     orm.selectRestaurant(colVals, condition, function(res) {
       cb(res);
@@ -22,7 +17,25 @@ var restaurant = {
     orm.selectRestaurantByLicense(colVals, condition, function(res) {
       cb(res);
     });
+  },
+
+  // selsect comment 
+selectComment: function(cols, vals, cb) {
+    orm.selectAll("COMMENT", cols, vals, function(res) {
+      cb(res);
+    });
   }
+
+
+
+  // createComment: function(colVals,val,cb){
+  //   orm.createComment("COMMENT",cols, vals, function(res) {
+  //     cb(res);
+  //   });
+
+  // }
+
+
 };
 
 module.exports = restaurant;

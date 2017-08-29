@@ -1,0 +1,150 @@
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"> </script>
+<br>
+<h1>Dashboard</h1>
+<hr>
+<div class="container-fluid">
+{{!-- <h3>Restaurants:</h3> --}}
+
+
+ <table class="table table-hover text-left">
+    <tbody>
+  {{#each comment}}
+  <div class="container-fluid">
+{{!-- <h3>Restaurants:</h3> --}}
+ <table class="table table-hover text-left">
+    <thead>
+      <tr>
+        <th>Restaurant Name</th>
+        <th>Address</th>
+        <th>Risk</th>
+        <th>Inspection Date</th>
+      </tr>
+    </thead>
+    <tbody>
+  {{#each comment}}
+      <tr>
+       <td>{{this.USER_ID}}</td>
+       <td>{{this.LICENSE_NO}}</td>
+       <td>{{this.COMMENT}}</td>
+       <td>{{this.CREATED_DATE}}</td>
+       <td>
+      </tr>
+  {{/each}}
+    </tbody>
+</table>
+</div>
+
+ <div class="toolbar">
+    <p>Risky Restaurants</p>
+  </div>
+  <div class="content-wrapper">
+  <div class="first">
+    <h1>Risky Restaurants</h1>
+    <p>Chuck ipsum. When Chuck Norris had surgery, the anesthesia was applied to the doctors. Chuck Norris doesn't worry about changing his clock twice a year for daylight savings time. The sun rises and sets when Chuck tells it to. Pee Wee Herman got arrested for masturbating in public. </p>
+  </div>
+  <div class="second">
+    <h1>Comments</h1>
+    <p>Chuck ipsum. When Chuck Norris had surgery, the anesthesia was applied to the doctors. Chuck Norge that incorporates karate and roundhouse kicks. So next time Chuck Norris is kicking .</p>
+  </div>
+  <div class="third">
+    <div class="bottom-left">
+      <h1>Left Field</h1>
+    <p>Chuck ipsum. When Chuck Norris had surgery, the anesthesia was applied to the doctors. Chuck Norris doesn't worry about changing his clock twice a year for daylight savings time. The sun rises and sets when Chuck tells it to. Pee Wee Herman got arrested for masturbating in public. </p>
+    </div>
+    <div class="bottom-right">
+      <h1>Right Field</h1>
+    <p>Chuck ipsum. When Chuck Norris had surgery, the anesthesia was applied to the doctors. Chuck Norris doesn't worry about changing his clock twice a year for daylight savings time. The sun rises and sets when Chuck tells it to. Pee Wee Herman got arrested for masturbating in public. </p>
+    </div>
+  </div>
+  </div>
+<style type="text/css">
+	/* Every project should have this */
+
+* {
+  -webkit-box-sizing: border-box;  
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Style */
+
+body {
+  color:white;
+}
+.toolbar {
+  background:tomato;
+  padding-left:50px;
+  padding-right:50px;
+  height:50px;
+}
+.content-wrapper {
+  background: darkgrey;
+}
+.first {
+  top:0;
+  height:40%;
+  padding-top:50px;
+  background: lightblue;
+}
+.second {
+  top:40%;
+  height:27%;
+  background: orange;
+}
+.third {
+  top:67%;
+  height:33%;
+  background: purple;
+}
+.first, .second, .bottom-left, .bottom-right {
+  padding:50px;
+}
+.bottom-left {
+  background:lightgreen;
+}
+.bottom-right {
+  background:green;
+}
+
+/* Layout */
+
+body {
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  padding:0;
+  margin:0;
+  overflow:hidden;
+}
+.toolbar {
+  position:absolute;
+  top:0;
+  width:100%;
+  z-index:2;
+  overflow:hidden;
+}
+.first, .second, .third {
+  position:fixed;
+  width:100%;
+  display:block;
+  overflow:auto;
+}
+.bottom-left, .bottom-right {
+  width:50%;
+  display:block;
+  float:left;
+  overflow:scroll;
+  height:100%;
+}
+
+
+</style>
+
+  {{/each}}
+    </tbody>
+</table>
+</div>
+
+<script src="app.js"></script>

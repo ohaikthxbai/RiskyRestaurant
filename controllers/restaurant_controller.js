@@ -8,46 +8,55 @@ router.get("/", function (req, res, next) {
   res.render('../views/index.handlebars');
 });
 
-//Get Method for Homepage
-router.get("/map", function (req, res, next) {
-  res.render('../views/map.handlebars');
-});
-
 //Post Method after user clicks submit
 router.post('/restaurant/submit', function (req, res, next) {
     var DBA_NAME = req.body.DBA_NAME;
     DBA_NAME = DBA_NAME.replace(/[^\w\s]/gi, '');
     res.redirect('/restaurant/' + DBA_NAME);
   });
+// comment post
 
-//Get the number of records
-  router.get("/restaurant/:DBA_NAME", function (req, res) {
-    var DBA_NAME = req.params.DBA_NAME;
-    var PAGE = req.query.page;
-    restaurant.numberRestaurant([
-      "RESTAURANT"
-    ], [
-        DBA_NAME
-      ], function (data) {
-        res.redirect('/restaurant/' + DBA_NAME+"/"+data[0].DATA_LEN+"?page=1");
+router.post('/restaurant/comment', function (req, res, next) {
+    var COMMENT = req.body.COMMENT;
+    var LICENSE_NO = req.body.LICENSE_NO;
+  restaurant.create([
+    "USER_ID", "COMMENT", "LICENSE_NO"
+  ], [
+    9999, req.body.COMMENT, req.body.LICENSE_NO
+  ], function() {
+        res.redirect('/info/' + LICENSE_NO);
   });
 });
 
 
+
 //Get Result Page after user query
-router.get("/restaurant/:DBA_NAME/:DATA_LEN", function (req, res) {
+router.get("/restaurant/:DBA_NAME", function (req, res) {
   var DBA_NAME = req.params.DBA_NAME;
-  var PAGE_NO = req.query.page;
-  var DATA_LEN = req.params.DATA_LEN;
   restaurant.selectRestaurant([
     "RESTAURANT"
   ], [
-      DBA_NAME, DATA_LEN, PAGE_NO
+      DBA_NAME
     ], function (data) {
-      res.render("result", { restaurant: data, pagination: {
-        page: PAGE_NO,
-        pageCount: Math.ceil(DATA_LEN/10)
-      } } );
+      res.render("result", { restaurant: data });
+    });
+});
+
+
+router.get("/dashboard", function (req, res, next) {
+  res.render('../views/dashboard.handlebars');
+});
+
+// get comment for dashboard
+
+router.get("/dashboard", function (req, res) {
+  var comment = req.params.COMMENT;
+  comment.selectComment([
+    "Comment"
+  ], [
+      
+    ], function (data) {
+      res.render("result", { comment: data });
     });
 });
 
@@ -66,6 +75,7 @@ router.get("/info/:LICENSE_NO", function (req, res) {
         LICENSE_NO
       ], function (data) {
         res.render("restaurant", { restaurant: data });
+        console.log(data);
       });
   }); 
 
