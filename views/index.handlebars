@@ -7,13 +7,13 @@
     <form action="/restaurant/submit" method="POST">
       <p><input type="text" id="ca" name="DBA_NAME" class="mytext form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Restaurant Name'"
           placeholder="Enter Restaurant Name" pattern="[^@#$%^*!()_+-={}|;:<>./?\x22\x5b\x5d\x5c]+" 1 Comment required></p>
-      <div id="selects">
-        <span id="select1Div" class="float-right" style="float:left;margin-right:150px;">
+          <div id="selects">
+            <span id="select1Div" class="float-right" style="float:left;margin-right:15px;">
               <select name="firstSelect" id="firstSelect">
                 <option>All Neighborhoods</option>
               </select>
               </span>
-      </div>
+          </div>
       <p class="submit-btn">
         <button class="btn btn-lg btn-danger" type="submit">I'm feeling risky</button>
       </p>
@@ -32,7 +32,15 @@
   <br>
   <br>
 
-  <section id="tipSection">
+  <section id="chart-info">
+  <canvas id="myChart" width="100" height="50"></canvas>
+  </section>
+
+  <br>
+  <br>
+
+
+  <section id="instructionSection">
     <h1> Simple Instructions: </h1>
       <ol class="instruction-list">
         <li>1. Enter the restaurant you would like to visit and select the neighborhood.</li>
@@ -50,8 +58,11 @@
   <br>
   <br>
 
+</div>
+</div>
+</div>
 
-  <script>
+<script>
   var options1 = ['Alta Vista Terrace','Ashburn','Austin','Beverly','Brighton Park','Bronzeville','Bucktown','Canaryville','Cathedral District','Central Station','Chatham','Chicago Lawn','Lincoln Park','Douglas','Edgewater Glen','Edison Park','Englewood','Garfield Ridge','Gold Coast','Hegewisch','Hermosa','Kenwood','Lakeview','Lincoln Square','Loop','Lower West Side','Middle Edgebrook','Near North Side','Near West Side','Noble Square','North Center','Ohare','Old Edgebrook','Old Irving Park','Peterson Park','Portage Park','Pullman','Riverdale','Rogers Park','Schorsch Forest View','South Chicago','South Lawndale','South Shore','Suburbs','Tri-Taylor','Uptown','West Englewood','West Garfield Park','West Loop','West Ridge','West Town','Woodlawn'];
   var options2 = ['60613','60620,60652','60644,60651','60643,60655','60632','60653','60647','60609','60611','60605','60619','60629','60614','60616','60660','60631','60621','60638','60610','60633','60639','60615','60657','60625','60601,60602,60603,60604','60608','60630','60654','60606,60661','60622','60618','60666','60646','60641','60659','60634','60628','60627','60626','60656','60617','60623','60649','60007,60015,60018,60022,60044,60047,60076,60077,60107,60108,60126,60148,60153,60155,60176,60193,60201,60202,60302,60402,60406,60409,60411,60423,60429,60440,60453,60458,60461,60477,60478,60482,60501,60540,60559,60706,60707,60714,60803,60804,60805,60827','60612','60640','60636','60624','60607','60645','60642','60637']
   for (var i = 0; i < options1.length; i++) {
@@ -60,7 +71,4 @@
     opt.text = options1[i];
     firstSelect.options.add(opt);
   }
-    }
-  </script>
-</div>
-
+</script>

@@ -299,13 +299,18 @@ section{
     color: rgba(206, 99, 9, 1.0);
 }
 
-#tipSection{
+#chart-info{
+    background-color: rgba(8, 140, 187, 0.90);
+    color: #ecf0f1;
+}
+
+#instructionSection{
     background-color: rgba(206, 99, 9, 0.90);
     color: rgba(241, 196, 15, 1.0);
     padding: 5.75rem 9999rem;
 }
 
-#tipSection p, #whySection h4, #welcomeSection p{
+#instructionSection p, #whySection h4, #welcomeSection p{
     padding: 0 150px;
     text-align: left;
 
