@@ -24,9 +24,9 @@ var orm = {
 
 
     if (limit === 1) {
-      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS;";
+      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS LIMIT 1, 10;";
       } else {
-      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS LIMIT "+limit+", 10;";      
+      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS LIMIT "+limit*10-2+", +"+limit+";";      
       }
 
     connection.query(queryString, vals, function(err, result) {

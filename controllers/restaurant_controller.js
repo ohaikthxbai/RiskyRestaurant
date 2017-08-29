@@ -29,7 +29,7 @@ router.get("/restaurant/:DBA_NAME", function (req, res) {
         page: 3,
         pageCount: Math.ceil(data.length/10)
       } } );
- //     console.log(data.length);
+      console.log(data.length);
     });
 });
 
