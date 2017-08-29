@@ -6,7 +6,8 @@
     </div>
     <form action="/restaurant/submit" method="POST">
       <p><input type="text" id="ca" name="DBA_NAME" class="mytext form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Restaurant Name'"
-          placeholder="Enter Restaurant Name"></p>
+          placeholder="Enter Restaurant Name" pattern ="[^@#$%^*!()_+-={}|;:<>./?\x22\x5b\x5d\x5c]+"
+            1 Comment required></p>
       <p class="submit-btn">
         <button class="btn btn-lg btn-danger" type="submit">I'm feeling risky</button>
       </p>
