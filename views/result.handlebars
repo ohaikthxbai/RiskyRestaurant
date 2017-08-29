@@ -1,7 +1,18 @@
 <div class="result-hb">
 <br>
 <div class="container-fluid">
+
+<div id="selects" class="float-right">
+    <span id="select1Div" class="float-right" style="float:left;margin-right:15px;color:cyan;"> Select
+              by Neighborhood:
+              <select name="firstSelect" id="firstSelect">
+                <option>----</option>
+              </select>
+              </span>
+              
+</div>
 {{!-- <h3>Restaurants:</h3> --}}
+</br>
  <table class="table table-hover text-center">
     <thead>
       <tr>
@@ -77,3 +88,13 @@
     </form>
   </div>
 </div>
+
+<script>
+  var options1 = ['Lakeview', 'Lincoln Park', 'Old Town'];
+   for (var i = 0; i < options1.length; i++) {
+    var opt = document.createElement('option');
+    opt.value = options1[i];
+    opt.text = options1[i];
+    firstSelect.options.add(opt);
+  }
+</script>
