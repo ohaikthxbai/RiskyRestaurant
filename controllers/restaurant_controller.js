@@ -12,18 +12,24 @@ router.get("/", function (req, res, next) {
 router.post('/restaurant/submit', function (req, res, next) {
     var DBA_NAME = req.body.DBA_NAME;
     DBA_NAME = DBA_NAME.replace(/[^\w\s]/gi, '');
-    res.redirect('/restaurant/' + DBA_NAME);
+    res.redirect('/restaurant/' + DBA_NAME+"?page=1");
   });
 
 //Get Result Page after user query
 router.get("/restaurant/:DBA_NAME", function (req, res) {
   var DBA_NAME = req.params.DBA_NAME;
+  var PAGE = req.query.page;
+//  console.log(PAGE);
   restaurant.selectRestaurant([
     "RESTAURANT"
   ], [
-      DBA_NAME
+      DBA_NAME, PAGE
     ], function (data) {
-      res.render("result", { restaurant: data });
+      res.render("result", { restaurant: data, pagination: {
+        page: 3,
+        pageCount: Math.ceil(data.length/10)
+      } } );
+ //     console.log(data.length);
     });
 });
 

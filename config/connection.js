@@ -13,6 +13,7 @@ if (process.env.JAWSDB_URL) {
   port: 3306,
   database: "ebdb"
   });
+ // console.log(process.env.NODE_ENV);
 };
 
 //Connect to the database

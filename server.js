@@ -6,6 +6,9 @@ var exphbs = require('express-handlebars');
 var burger = require("./models/restaurant.js");
 var path = require("path");
 
+var Handlebars = require("handlebars");
+Handlebars.registerHelper('paginate', require('handlebars-paginate'));
+
 // Sets up the Express App
 var app = express();
 var PORT = process.env.PORT || 8080;

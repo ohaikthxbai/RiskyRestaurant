@@ -15,7 +15,20 @@ var orm = {
   },
 //Select specific restaurant
   selectRestaurant: function(table, vals, cb) {
-    var queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+vals+"%' GROUP BY DBA_NAME, RISK, ADDRESS;";
+   var val = vals[0];
+    console.log(vals);
+    var limit = parseInt(vals[1]);
+    console.log(limit);
+ 
+//    var queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS;";
+
+
+    if (limit === 1) {
+      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS;";
+      } else {
+      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS LIMIT "+limit+", 10;";      
+      }
+
     connection.query(queryString, vals, function(err, result) {
         if (err) {
             throw err;
