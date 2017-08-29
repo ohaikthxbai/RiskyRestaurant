@@ -19,12 +19,21 @@ var restaurant = {
     });
   },
 
-  createComment: function(colVals,val,cb){
-    orm.createComment("COMMENT",cols, vals, function(res) {
+  // selsect comment 
+selectComment: function(cols, vals, cb) {
+    orm.selectAll("COMMENT", cols, vals, function(res) {
       cb(res);
     });
-
   }
+
+
+
+  // createComment: function(colVals,val,cb){
+  //   orm.createComment("COMMENT",cols, vals, function(res) {
+  //     cb(res);
+  //   });
+
+  // }
 
 
 };
