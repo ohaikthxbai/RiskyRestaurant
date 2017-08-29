@@ -65,11 +65,11 @@ numberRestaurant: function(table, vals, cb) {
     var nextPage = 10;
   
     if (limit === 1) {
-      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' AND ZIP IN ('"+zip+"') GROUP BY DBA_NAME, RISK, ADDRESS";
+      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' AND ZIP IN ("+zip+") GROUP BY DBA_NAME, RISK, ADDRESS";
       } else if (page === 1) {
-      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' AND ZIP IN ('"+zip+"') GROUP BY DBA_NAME, RISK, ADDRESS LIMIT 0, 9;";      
+      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' AND ZIP IN ("+zip+") GROUP BY DBA_NAME, RISK, ADDRESS LIMIT 0, 9;";      
       } else {
-      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' AND ZIP IN ('"+zip+"') GROUP BY DBA_NAME, RISK, ADDRESS LIMIT "+prevPage+", "+nextPage+";";         
+      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' AND ZIP IN ("+zip+") GROUP BY DBA_NAME, RISK, ADDRESS LIMIT "+prevPage+", "+nextPage+";";         
       }
 
     connection.query(queryString, vals, function(err, result) {
