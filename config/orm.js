@@ -44,7 +44,7 @@ numberRestaurant: function(table, vals, cb) {
     console.log(val);
     console.log(limit);
     console.log(page);
-    var prevPage = page*10-10+1;
+    var prevPage = page*10-10;
     var nextPage = 10;
     console.log(prevPage);
     console.log(nextPage);
@@ -55,7 +55,7 @@ numberRestaurant: function(table, vals, cb) {
     if (limit === 1) {
       queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS";
       } else if (page === 1) {
-      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS LIMIT 1, 10;";      
+      queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS LIMIT 0, 9;";      
       } else {
       queryString = "SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' GROUP BY DBA_NAME, RISK, ADDRESS LIMIT "+prevPage+", "+nextPage+";";         
       }
