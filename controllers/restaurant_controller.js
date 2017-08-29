@@ -8,6 +8,11 @@ router.get("/", function (req, res, next) {
   res.render('../views/index.handlebars');
 });
 
+//Get Method for Homepage
+router.get("/map", function (req, res, next) {
+  res.render('../views/map.handlebars');
+});
+
 //Post Method after user clicks submit
 router.post('/restaurant/submit', function (req, res, next) {
     var DBA_NAME = req.body.DBA_NAME;
