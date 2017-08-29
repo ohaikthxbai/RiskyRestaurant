@@ -30,6 +30,10 @@ app.set("view engine", "handlebars");
 
  app.use(express.static(path.join(__dirname, './public')));
 
+ app.use(function(req, res, next){
+  res.status(404).render('404_error_template', {title: "Sorry, :( page not found. Please try again"});
+});
+
 // Starts the server to begin listening
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
