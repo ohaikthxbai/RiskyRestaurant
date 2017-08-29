@@ -14,7 +14,7 @@ router.post('/restaurant/submit', function (req, res, next) {
     DBA_NAME = DBA_NAME.replace(/[^\w\s]/gi, '');
     res.redirect('/restaurant/' + DBA_NAME);
   });
-
+// comment post
 
 router.post('/restaurant/comment', function (req, res, next) {
     var COMMENT = req.body.COMMENT;
@@ -47,16 +47,18 @@ router.get("/dashboard", function (req, res, next) {
   res.render('../views/dashboard.handlebars');
 });
 
-// router.get("/dashboard", function (req, res) {
-//   var comment = req.params.COMMENT;
-//   comment.selectComment([
-//     "Comment"
-//   ], [
+// get comment for dashboard
+
+router.get("/dashboard", function (req, res) {
+  var comment = req.params.COMMENT;
+  comment.selectComment([
+    "Comment"
+  ], [
       
-//     ], function (data) {
-//       res.render("result", { comment: data });
-//     });
-// });
+    ], function (data) {
+      res.render("result", { comment: data });
+    });
+});
 
 //Post Method after user clicks submit
 router.post('/info/:LICENSE_NO', function (req, res, next) {
