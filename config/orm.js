@@ -45,14 +45,29 @@ var orm = {
     });
   }
 
+  // select comment 
 
-  // createComment: function (table, vals, cb) {
-  //   var queryString = "INSERT INTO "+table+" (USER_ID,LICENSE_NO,COMMENT,CREATED_DATE) values(9999,??,??,20-08-08";
-  //   console.log(queryString);
-  //   connection.query(queryString, [LICENSE_NO,COMMENT], function(err, result) {
-  //     console.log(result);
-  //   });
-  // },
+   selectComment: function(tableInput, cb) {
+        var queryString = "SELECT * FROM " + tableInput + ";";
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    }
+
+    // create comment
+
+
+  createComment: function (table, vals, cb) {
+    var queryString = "INSERT INTO "+table+" (USER_ID,LICENSE_NO,COMMENT,CREATED_DATE) values(9999,??,??,20-08-08";
+    console.log(queryString);
+    connection.query(queryString, [LICENSE_NO,COMMENT], function(err, result) {
+      console.log(result);
+    });
+  },
 
 
 };
