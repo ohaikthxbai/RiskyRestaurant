@@ -1,4 +1,5 @@
-<div class="restaurant-hb">
+<div class ="container">
+    <div class="restaurant-hb">
     <br>
 
     <div class="container-fluid">
@@ -14,33 +15,27 @@
                     </div>
                 <br>
                     <div class="risk">
+                        <br>
                         <h4>DATE: {{restaurant.0.INSPECTION_DATE}}</h4>
                         <h4>RESULTS: {{restaurant.0.RESULTS}}</h4>
                         <h4>RISK LEVEL: {{restaurant.0.RISK}}</h4>
-                    </div>      
-            
-                    
-                </div>
-                {{restaurant.0.VIOLATIONS}} 
-                    
-                    <br>
-                
-                <h1> Write a Comment </h1>
-                
-                {{#each restaurant}} 
-  
-                <tr> 
-                 
-                    <td>{{this.USERNAME}}</td>
-                    <td>{{this.COMMENT}}</td>
-                
-                    {{!--<td>{{this.COMMENT_DATE}}</td> --}}
-                </tr>  
-                {{/each}}
-                  
+                        <br>
+                    </div>
+                 </div>                    
             </tbody>
         </table>
     </div>
+        <div class="restInfo">
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb"> /*<!--*/ if
+            (!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"),
+             l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"),
+              h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1503970923885");
+              if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+            <!-- end www.htmlcommentbox.com -->
+        </div>
 
     <div class="container-fluid">
         <form method="get" action="/">
@@ -48,4 +43,5 @@
             <button class="center btn btn-danger" type="submit">Go Back</button>
         </form>
     </div>
+</div>
 </div>
