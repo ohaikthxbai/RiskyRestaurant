@@ -12,24 +12,39 @@ router.get("/", function (req, res, next) {
 router.post('/restaurant/submit', function (req, res, next) {
     var DBA_NAME = req.body.DBA_NAME;
     DBA_NAME = DBA_NAME.replace(/[^\w\s]/gi, '');
-    res.redirect('/restaurant/' + DBA_NAME+"?page=1");
+    res.redirect('/restaurant/' + DBA_NAME);
   });
 
+  router.get("/restaurant/:DBA_NAME", function (req, res) {
+    var DBA_NAME = req.params.DBA_NAME;
+    var PAGE = req.query.page;
+  //  console.log(PAGE);
+    restaurant.numberRestaurant([
+      "RESTAURANT"
+    ], [
+        DBA_NAME
+      ], function (data) {
+        res.redirect('/restaurant/' + DBA_NAME+"/"+data[0].DATA_LEN+"?page=1");
+        console.log(data[0]);
+  });
+});
+
+
 //Get Result Page after user query
-router.get("/restaurant/:DBA_NAME", function (req, res) {
+router.get("/restaurant/:DBA_NAME/:DATA_LEN", function (req, res) {
   var DBA_NAME = req.params.DBA_NAME;
-  var PAGE = req.query.page;
+  var PAGE_NO = req.query.page;
+  var DATA_LEN = req.params.DATA_LEN;
 //  console.log(PAGE);
   restaurant.selectRestaurant([
     "RESTAURANT"
   ], [
-      DBA_NAME, PAGE
+      DBA_NAME, DATA_LEN, PAGE_NO
     ], function (data) {
       res.render("result", { restaurant: data, pagination: {
         page: 3,
-        pageCount: Math.ceil(data.length/10)
+        pageCount: Math.ceil(DATA_LEN/10)
       } } );
-      console.log(data.length);
     });
 });
 
