@@ -17,7 +17,13 @@ router.get("/map", function (req, res, next) {
 router.post('/restaurant/submit', function (req, res, next) {
     var DBA_NAME = req.body.DBA_NAME;
     DBA_NAME = DBA_NAME.replace(/[^\w\s]/gi, '');
+    ZIP = req.body.firstSelect;
+    console.log(ZIP);
+    if (ZIP === "All Neighborhoods") {
     res.redirect('/restaurant/' + DBA_NAME);
+    } else {
+    res.redirect('/filter/' + DBA_NAME +"/"+ZIP); 
+    }
   });
 
 //Get the number of records
@@ -31,6 +37,20 @@ router.post('/restaurant/submit', function (req, res, next) {
       ], function (data) {
         res.redirect('/restaurant/' + DBA_NAME+"/"+data[0].DATA_LEN+"?page=1");
   });
+});
+
+//Get the number of filtered records
+router.get("/filter/:DBA_NAME/:ZIP", function (req, res) {
+  var DBA_NAME = req.params.DBA_NAME;
+  var PAGE = req.query.page;
+  var ZIP = req.params.ZIP;
+  restaurant.numberRestaurant([
+    "RESTAURANT"
+  ], [
+      DBA_NAME
+    ], function (data) {
+      res.redirect('/filter/' + DBA_NAME+"/"+ZIP+"/"+data[0].DATA_LEN+"?page=1");
+});
 });
 
 
@@ -50,6 +70,27 @@ router.get("/restaurant/:DBA_NAME/:DATA_LEN", function (req, res) {
       } } );
     });
 });
+
+
+//Get Filtered results by neighborhood
+router.get("/filter/:DBA_NAME/:ZIP/:DATA_LEN", function (req, res) {
+  var DBA_NAME = req.params.DBA_NAME;
+  var PAGE_NO = req.query.page;
+  var DATA_LEN = req.params.DATA_LEN;
+  var ZIP = req.params.ZIP;
+  restaurant.filterRestaurant([
+    "RESTAURANT"
+  ], [
+      DBA_NAME, DATA_LEN, PAGE_NO, ZIP
+    ], function (data) {
+      res.render("result", { restaurant: data, pagination: {
+        page: PAGE_NO,
+        pageCount: Math.ceil(DATA_LEN/10)
+      } } );
+    });
+});
+
+
 
 //Post Method after user clicks submit
 router.post('/info/:LICENSE_NO', function (req, res, next) {
