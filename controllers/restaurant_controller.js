@@ -8,6 +8,11 @@ router.get("/", function (req, res, next) {
   res.render('../views/index.handlebars');
 });
 
+//Get Method for Homepage
+router.get("/login", function (req, res, next) {
+  res.render('../views/login.handlebars');
+});
+
 //Get Method for Homepage (MAPS)
 router.get("/map", function (req, res, next) {
   var LOCATION = req.params.LOCATION;
@@ -148,15 +153,3 @@ router.get("/info/:LICENSE_NO", function (req, res) {
 });
 
 module.exports = router;
-
-// router.get("/info/:LICENSE_NO", function (req, res) {
-//   var LICENSE_NO = req.params.LICENSE_NO;
-//   restaurant.selectRestaurantByLicense([
-//     "RESTAURANT"
-//   ], [
-//       LICENSE_NO
-//     ], function (data) {
-//       res.render("restaurant", { restaurant: data });
-//       console.log(data[0].RISK) 
-//     });  
-// }); 
