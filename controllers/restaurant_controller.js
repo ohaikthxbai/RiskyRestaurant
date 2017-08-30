@@ -95,7 +95,6 @@ router.get("/restaurant/:DBA_NAME/:DATA_LEN", function (req, res) {
           pageCount: Math.ceil(DATA_LEN / 10)
         }
       })
-      console.log(data.length);
       ;
 
     });
