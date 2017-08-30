@@ -280,11 +280,6 @@ a:hover {
         background-color: rgba(245, 245, 245, 0.4);
     }
 
-    #map {
-        height: 50%;
-        width: 50%;
-    }
-
 .indexMain{
     overflow-x: hidden;
     font-size: 23px;
