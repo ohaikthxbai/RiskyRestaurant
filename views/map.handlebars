@@ -9,10 +9,10 @@ function initMap() {
 
 		{{#each mapData}}
 		{{#if @last}}
-          ["{{this.DBA_NAME}}", {{this.LATITUDE}}, {{this.LONGITUDE}}, 0]
+          ["{{this.DBA_NAME}}, {{this.RISK}}", {{this.LATITUDE}}, {{this.LONGITUDE}}, 0]
 		
 		{{else}}
-			["{{this.DBA_NAME}}", {{this.LATITUDE}}, {{this.LONGITUDE}}, 0],
+			["{{this.DBA_NAME}}, {{this.RISK}}", {{this.LATITUDE}}, {{this.LONGITUDE}}, 0],
 		{{/if}}
 
 		{{/each}}
