@@ -8,7 +8,7 @@
       <p><input type="text" id="ca" name="DBA_NAME" class="mytext form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Restaurant Name'"
           placeholder="Enter Restaurant Name" pattern="[^@#$%^*!()_+-={}|;:<>./?\x22\x5b\x5d\x5c]+" 1 Comment required></p>
           <div id="selects">
-            <span id="select1Div" class="float-right" style="float:left;margin-right:15px;">
+            <span id="select1Div" class="float-right" style="float:left;margin-right:150px;">
               <select name="firstSelect" id="firstSelect">
                 <option>All Neighborhoods</option>
               </select>
@@ -33,7 +33,11 @@
   <br>
 
   <section id="chart-info">
+
+    <div class="chart-container">
   <canvas id="myChart" width="100" height="50"></canvas>
+    </div>
+
   </section>
 
   <br>
@@ -43,15 +47,15 @@
   <section id="instructionSection">
     <h1> Simple Instructions: </h1>
       <ol class="instruction-list">
-        <li>1. Enter the restaurant you would like to visit and select the neighborhood.</li>
+        <li>1. Enter the restaurant and the neighborhood of that restaurant.</li>
         <br>
-        <li>3. Click <button class="btn btn-lg btn-danger">I'm feeling risky</button>.</li>
+        <li>2. Click <button class="btn btn-lg btn-danger">I'm feeling risky</button>.</li>
         <br>
-        <li>4. Find which restaurant you are looking for in the table and select <button class="btn btn-danger" type="submit">Risk</button>.</li>
+        <li>3. Find which restaurant you are looking for in the table and select <button class="btn btn-danger" type="submit">More Info</button>.</li>
         <br>
-        <li>5. This page indicates when that restaurant was inspected, results, and risk level.</li>
+        <li>4. This page indicates when that restaurant was inspected, results, and risk level.</li>
         <br>
-        <li>6. Leave comments on experences that you have had with that restaurant!</li>
+        <li>5. Leave comments on experences that you have had with that restaurant!</li>
       </ol>
   </section>
 
@@ -61,6 +65,70 @@
 </div>
 </div>
 </div>
+
+<script>
+  var myChart = document.getElementById('myChart').getContext('2d');
+
+  //Global Options
+  Chart.defaults.global.defaultFontFamily = '"Lucida Sans Unicode", "Lucida Grande", sans-serif';
+  Chart.defaults.global.defaultFontSize = 14;
+  Chart.defaults.global.defaultFontColor = 'black';
+
+  var inspectionChart = new Chart(myChart,{
+    type: 'bar',
+    data:{
+      labels:['Pass', 'Fail', 'Pass w/ Conditions', 'Out of Business', 'No Entry', 'Not Ready'],
+      datasets:[{
+        data:[
+        12100,
+        4000,
+        2176,
+        1376,
+        1079,
+        352,
+        ],
+        backgroundColor:[
+        '#16a085',
+        '#e74c3c',
+        '#8e44ad',
+        '#7f8c8d',
+        '#f1c40f',
+        '#ecf0f1'
+        ],
+        borderWidth:1,
+        borderColor:'#777',
+        hoverBorderWidth:2,
+      }]
+    },
+    options:{
+      title: {
+        display: true,
+        text: 'Restaurant Inspection Data: Aug 1, 2016 - Aug 1, 2017',
+        fontSize: 18
+      },
+      legend:{
+        display:false,
+      }
+
+    }
+  });
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
   var options1 = ['Alta Vista Terrace','Ashburn','Austin','Beverly','Brighton Park','Bronzeville','Bucktown','Canaryville','Cathedral District','Central Station','Chatham','Chicago Lawn','Lincoln Park','Douglas','Edgewater Glen','Edison Park','Englewood','Garfield Ridge','Gold Coast','Hegewisch','Hermosa','Kenwood','Lakeview','Lincoln Square','Loop','Lower West Side','Middle Edgebrook','Near North Side','Near West Side','Noble Square','North Center','Ohare','Old Edgebrook','Old Irving Park','Peterson Park','Portage Park','Pullman','Riverdale','Rogers Park','Schorsch Forest View','South Chicago','South Lawndale','South Shore','Suburbs','Tri-Taylor','Uptown','West Englewood','West Garfield Park','West Loop','West Ridge','West Town','Woodlawn'];

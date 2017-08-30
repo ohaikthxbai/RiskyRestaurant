@@ -22,7 +22,8 @@
         <th>State</th>
         <th>Zip</th>
         <th>Inspection Date</th>
-        <th>View Risk</th>
+        <th>Risk Level</th>
+        <th>Information</th>
       </tr>
     </thead>
     <tbody>
@@ -34,7 +35,8 @@
        <td>{{this.STATE}}</td>
        <td>{{this.ZIP}}</td>
        <td>{{this.INSPECTION_DATE}}</td>
-       <td><form action="/info/{{LICENSE_NO}}" method="POST"><button class="btn btn-danger" type="submit">Risk</button></form></td>
+       <td>{{this.RISK}}</td>
+       <td><form action="/info/{{LICENSE_NO}}" method="POST"><button class="btn btn-danger" type="submit">More Info</button></form></td>
       </tr>
   {{/each}}
     </tbody>
@@ -88,6 +90,13 @@
     </form>
   </div>
 </div>
+
+<script>
+ 
+
+
+
+</script>
 
 <script>
   var options1 = ['Alta Vista Terrace','Ashburn','Austin','Beverly','Brighton Park','Bronzeville','Bucktown','Canaryville','Cathedral District','Central Station','Chatham','Chicago Lawn','DePaul','Douglas','Edgewater Glen','Edison Park','Englewood','Garfield Ridge','Gold Coast','Hegewisch','Hermosa','Kenwood','Lakeview','Lincoln Square','Loop','Lower West Side','Middle Edgebrook','Near North Side','Near West Side','Noble Square','North Center','Ohare','Old Edgebrook','Old Irving Park','Peterson Park','Portage Park','Pullman','Riverdale','Rogers Park','Schorsch Forest View','South Chicago','South Lawndale','South Shore','Suburbs','Tri-Taylor','Uptown','West Englewood','West Garfield Park','West Loop','West Ridge','West Town','Woodlawn'];
