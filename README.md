@@ -31,7 +31,17 @@ With these two indicators, the user now possesses the ability to choose a clean 
 
 Step By Step
 ---
-blah blah blah
+Home Page:
+![Imgur](http://i.imgur.com/6UZMSfO.gifv)
+
+Using the search:
+![Imgur](http://i.imgur.com/v8Zu2Z9.gifv)
+
+Viewing the results and comments:
+![Imgur](http://i.imgur.com/66nemaV.gifv)
+
+The Map:
+![Imgur](http://i.imgur.com/kjIGflw.gifv)
 
 Future Add-ons
 ---
