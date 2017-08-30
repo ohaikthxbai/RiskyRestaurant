@@ -15,28 +15,28 @@ router.get("/map", function (req, res, next) {
 
 //Post Method after user clicks submit
 router.post('/restaurant/submit', function (req, res, next) {
-    var DBA_NAME = req.body.DBA_NAME;
-    DBA_NAME = DBA_NAME.replace(/[^\w\s]/gi, '');
-    ZIP = req.body.firstSelect;
-    console.log(ZIP);
-    if (ZIP === "All Neighborhoods") {
+  var DBA_NAME = req.body.DBA_NAME;
+  DBA_NAME = DBA_NAME.replace(/[^\w\s]/gi, '');
+  ZIP = req.body.firstSelect;
+  console.log(ZIP);
+  if (ZIP === "All Neighborhoods") {
     res.redirect('/restaurant/' + DBA_NAME);
-    } else {
-    res.redirect('/filter/' + DBA_NAME +"/"+ZIP); 
-    }
-  });
+  } else {
+    res.redirect('/filter/' + DBA_NAME + "/" + ZIP);
+  }
+});
 
 //Get the number of records
-  router.get("/restaurant/:DBA_NAME", function (req, res) {
-    var DBA_NAME = req.params.DBA_NAME;
-    var PAGE = req.query.page;
-    restaurant.numberRestaurant([
-      "RESTAURANT"
-    ], [
-        DBA_NAME
-      ], function (data) {
-        res.redirect('/restaurant/' + DBA_NAME+"/"+data[0].DATA_LEN+"?page=1");
-  });
+router.get("/restaurant/:DBA_NAME", function (req, res) {
+  var DBA_NAME = req.params.DBA_NAME;
+  var PAGE = req.query.page;
+  restaurant.numberRestaurant([
+    "RESTAURANT"
+  ], [
+      DBA_NAME
+    ], function (data) {
+      res.redirect('/restaurant/' + DBA_NAME + "/" + data[0].DATA_LEN + "?page=1");
+    });
 });
 
 //Get the number of filtered records
@@ -49,8 +49,8 @@ router.get("/filter/:DBA_NAME/:ZIP", function (req, res) {
   ], [
       DBA_NAME, ZIP
     ], function (data) {
-      res.redirect('/filter/' + DBA_NAME+"/"+ZIP+"/"+data[0].DATA_LEN+"?page=1");
-});
+      res.redirect('/filter/' + DBA_NAME + "/" + ZIP + "/" + data[0].DATA_LEN + "?page=1");
+    });
 });
 
 
@@ -64,10 +64,13 @@ router.get("/restaurant/:DBA_NAME/:DATA_LEN", function (req, res) {
   ], [
       DBA_NAME, DATA_LEN, PAGE_NO
     ], function (data) {
-      res.render("result", { restaurant: data, pagination: {
-        page: PAGE_NO,
-        pageCount: Math.ceil(DATA_LEN/10)
-      } } );
+      res.render("result", {
+        restaurant: data, pagination: {
+          page: PAGE_NO,
+          pageCount: Math.ceil(DATA_LEN / 10)
+        }
+      });
+
     });
 });
 
@@ -83,31 +86,51 @@ router.get("/filter/:DBA_NAME/:ZIP/:DATA_LEN", function (req, res) {
   ], [
       DBA_NAME, DATA_LEN, PAGE_NO, ZIP
     ], function (data) {
-      res.render("result", { restaurant: data, pagination: {
-        page: PAGE_NO,
-        pageCount: Math.ceil(DATA_LEN/10)
-      } } );
+      res.render("result", {
+        restaurant: data, pagination: {
+          page: PAGE_NO,
+          pageCount: Math.ceil(DATA_LEN / 10)
+        }
+      });
     });
 });
 
-
-
 //Post Method after user clicks submit
 router.post('/info/:LICENSE_NO', function (req, res, next) {
-    var LICENSE_NO = req.params.LICENSE_NO;
-    res.redirect('/info/' + LICENSE_NO);
-  });
+  var LICENSE_NO = req.params.LICENSE_NO;
+  res.redirect('/info/' + LICENSE_NO);
+});
 
 //Get Result Page after user query
 router.get("/info/:LICENSE_NO", function (req, res) {
-    var LICENSE_NO = req.params.LICENSE_NO;
-    restaurant.selectRestaurantByLicense([
-      "RESTAURANT"
-    ], [
-        LICENSE_NO
-      ], function (data) {
-        res.render("restaurant", { restaurant: data });
-      });
-  }); 
+  var LICENSE_NO = req.params.LICENSE_NO;
+  restaurant.selectRestaurantByLicense([
+    "RESTAURANT"
+  ], [
+      LICENSE_NO
+    ], function (data) {
+      var riskColor;
+      if (data[0].RISK === 'Risk 1 (High)') {
+        riskColor = 'background-color: red'
+      } else if (data[0].RISK === 'Risk 2 (Medium)') {
+        riskColor = 'background-color: yellow; color: black;'
+      } else {
+        riskColor = 'background-color: green; color: black;'
+      }
+      res.render("restaurant", { restaurant: data, risk: riskColor });
+    });
+});
 
 module.exports = router;
+
+// router.get("/info/:LICENSE_NO", function (req, res) {
+//   var LICENSE_NO = req.params.LICENSE_NO;
+//   restaurant.selectRestaurantByLicense([
+//     "RESTAURANT"
+//   ], [
+//       LICENSE_NO
+//     ], function (data) {
+//       res.render("restaurant", { restaurant: data });
+//       console.log(data[0].RISK) 
+//     });  
+// }); 

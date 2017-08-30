@@ -34,6 +34,13 @@ app.set("view engine", "handlebars");
   res.status(404).render('404_error_template', {title: "Sorry, :( page not found. Please try again"});
 });
 
+Handlebars.registerHelper('if_eq', function(a, b, opts) {
+  if(a == b) // Or === depending on your needs
+      return opts.fn(this);
+  else
+      return opts.inverse(this);
+});
+
 // Starts the server to begin listening
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);

@@ -1,30 +1,31 @@
-<div class ="container">
+<div class="container">
     <div class="restaurant-hb">
-    <br>
+        <br>
 
-    <div class="container-fluid">
-        {{!--<h3>Restaurants:</h3> --}}
+        <div class="container-fluid">
+            {{!--
+            <h3>Restaurants:</h3> --}}
 
-        <table class="table table-hover text-left">
-            <tbody>
-                
-                <div class="restInfo">
-                    <div class="DbaName">
-                        <h2>{{restaurant.0.DBA_NAME}}</h2>
-                        <h4>{{restaurant.0.ADDRESS}}, {{restaurant.0.CITY}}, {{restaurant.0.STATE}} {{restaurant.0.ZIP}}</h4>
-                    </div>
-                <br>
-                    <div class="risk">
+            <table class="table table-hover text-left">
+                <tbody>
+
+                    <div class="restInfo">
+                        <div class="DbaName">
+                            <h2>{{restaurant.0.DBA_NAME}}</h2>
+                            <h4>{{restaurant.0.ADDRESS}}, {{restaurant.0.CITY}}, {{restaurant.0.STATE}} {{restaurant.0.ZIP}}</h4>
+                        </div>
                         <br>
-                        <h4>DATE: {{restaurant.0.INSPECTION_DATE}}</h4>
-                        <h4>RESULTS: {{restaurant.0.RESULTS}}</h4>
-                        <h4>RISK LEVEL: {{restaurant.0.RISK}}</h4>
-                        <br>
+                        <div class="risk" style="{{risk}}">
+                            <br>
+                            <h4>DATE: {{restaurant.0.INSPECTION_DATE}}</h4>
+                            <h4>RESULTS: {{restaurant.0.RESULTS}}</h4>
+                            <h4>RISK LEVEL: {{restaurant.0.RISK}}</h4>
+                            <br>
+                        </div>
                     </div>
-                 </div>                    
-            </tbody>
-        </table>
-    </div>
+                </tbody>
+            </table>
+        </div>
         <div class="restInfo">
             <!-- Add the comment section here
             
@@ -38,11 +39,11 @@
              -->
         </div>
 
-    <div class="container-fluid">
-        <form method="get" action="/">
-            <br>
-            <button class="center btn btn-danger" type="submit">Go Back</button>
-        </form>
+        <div class="container-fluid">
+            <form method="get" action="/">
+                <br>
+                <button class="center btn btn-danger" type="submit">Go Back</button>
+            </form>
+        </div>
     </div>
-</div>
 </div>
