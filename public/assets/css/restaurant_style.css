@@ -326,4 +326,13 @@ section{
     position: relative;
 }
 
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-width: 3px;
+}
+
 }
