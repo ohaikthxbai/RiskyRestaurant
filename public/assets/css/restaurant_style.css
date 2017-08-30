@@ -154,6 +154,13 @@ a:hover {
     color: black;
 }
 
+#map {
+    margin: 50px auto;
+    height: 70%;
+    width: 80%;
+    border: 5px solid rgba(241, 196, 15, 0.5);
+}
+
 
 /* MEDIA QUERIES */
 
@@ -219,6 +226,7 @@ a:hover {
     .footer {
         height: 10px;
     }
+}
 
     @media only screen and (max-width: 1115px) {
         .main {
@@ -337,6 +345,4 @@ hr {
     margin-left: 10%;
     margin-right: 10%;
     border-width: 3px;
-}
-
 }
