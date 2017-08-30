@@ -1,5 +1,25 @@
 var orm = require("../config/orm.js");
 
+var locationx = [];
+var locationy = [];
+
+restaurant.selectRestaurantLocation([
+    "RESTAURANT"
+  ], [
+    LOCATION
+  ], function(data) {
+      
+    //res.render("map", { restaurant: data });
+  })
+
+console.log(locationx);
+
+var result = restaurant.selectAll("DBA_NAME", "Subway", cb);
+for (var i =0; i < data.length; i++) {
+    locationx.push(data[i].LOCATION);
+  }
+//console.log(result);
+
 function initMap() {
     
         var broadway = {

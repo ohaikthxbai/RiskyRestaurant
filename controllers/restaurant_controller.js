@@ -16,7 +16,7 @@ router.get("/map", function (req, res, next) {
   ], [
     LOCATION
   ], function(data) {
-    console.log(data);
+ //   console.log(data);
     //res.render("map", { restaurant: data });
   })
   res.render('../views/map.handlebars');
