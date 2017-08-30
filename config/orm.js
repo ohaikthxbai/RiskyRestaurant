@@ -26,6 +26,20 @@ numberRestaurant: function(table, vals, cb) {
    });
  },
 
+ //Determine the number of filtered records/restaurants
+numberFilterRestaurant: function(table, vals, cb) {
+  var val = vals[0];
+  var zip = parseInt(vals[1]);
+  var queryString = "SELECT COUNT(*) AS DATA_LEN FROM (SELECT LICENSE_NO, DBA_NAME, RISK, ADDRESS, CITY, STATE, ZIP, MAX(INSPECTION_DATE) AS INSPECTION_DATE FROM "+table+" WHERE DBA_NAME LIKE '%"+val+"%' AND ZIP IN ("+zip+") GROUP BY DBA_NAME, RISK, ADDRESS) b;"
+
+  connection.query(queryString, vals, function(err, result) {
+      if (err) {
+          throw err;
+        }
+        cb(result);
+  });
+},
+
 //Select specific restaurant
   selectRestaurant: function(table, vals, cb) {
     

@@ -44,10 +44,10 @@ router.get("/filter/:DBA_NAME/:ZIP", function (req, res) {
   var DBA_NAME = req.params.DBA_NAME;
   var PAGE = req.query.page;
   var ZIP = req.params.ZIP;
-  restaurant.numberRestaurant([
+  restaurant.numberFilterRestaurant([
     "RESTAURANT"
   ], [
-      DBA_NAME
+      DBA_NAME, ZIP
     ], function (data) {
       res.redirect('/filter/' + DBA_NAME+"/"+ZIP+"/"+data[0].DATA_LEN+"?page=1");
 });

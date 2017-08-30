@@ -13,6 +13,11 @@ var restaurant = {
       cb(res);
     });
   },
+  numberFilterRestaurant: function(colVals, condition, cb) {
+    orm.numberRestaurant(colVals, condition, function(res) {
+      cb(res);
+    });
+  },
   selectRestaurant: function(colVals, condition, cb) {
     orm.selectRestaurant(colVals, condition, function(res) {
       cb(res);
