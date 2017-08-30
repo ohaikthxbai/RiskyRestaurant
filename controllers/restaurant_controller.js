@@ -35,6 +35,7 @@ router.get("/map", function (req, res, next) {
   // hmm
   return coordinates;
 });
+});
 
 //Post Method after user clicks submit
 router.post('/restaurant/submit', function (req, res, next) {
