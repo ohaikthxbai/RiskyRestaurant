@@ -102,8 +102,19 @@ numberFilterRestaurant: function(table, vals, cb) {
           }
           cb(result);
     });
-  }
+  },
 
+  // Select the restaurants base on their location (Google Maps)
+  selectRestaurantLocation: function(table, vals, cb) {
+    var queryString = "SELECT LOCATION FROM " +table+ ";";
+    console.log(queryString);
+    connection.query(queryString, vals, function(err, result) {
+        if (err) {
+          throw err;
+          }
+        cb(result);
+        });
+    }
 };
 
 module.exports = orm;

@@ -32,6 +32,11 @@ var restaurant = {
     orm.selectRestaurantByLicense(colVals, condition, function(res) {
       cb(res);
     });
+  },
+  selectRestaurantLocation: function(colVals, condition, cb) {
+    orm.selectRestaurantLocation(colVals, condition, function(res){
+      cb(res);
+    });
   }
 };
 
