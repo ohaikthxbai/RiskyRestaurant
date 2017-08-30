@@ -69,7 +69,9 @@ router.get("/restaurant/:DBA_NAME/:DATA_LEN", function (req, res) {
           page: PAGE_NO,
           pageCount: Math.ceil(DATA_LEN / 10)
         }
-      });
+      })
+//      console.log(data[0].RISK);
+      ;
 
     });
 });
