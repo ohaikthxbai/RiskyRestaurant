@@ -30,8 +30,9 @@ router.get("/map", function (req, res, next) {
       dataSplit = dataSlice.split(',');
       coordinates.push(dataSplit);
     }
-    //console.log(coordinates);
-  res.render('../views/map.handlebars');
+//    console.log(coordinates);
+  res.render('../views/map.handlebars', {
+    mapData: data} );
   // hmm
   return coordinates;
 });

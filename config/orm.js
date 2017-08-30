@@ -106,7 +106,7 @@ numberFilterRestaurant: function(table, vals, cb) {
 
   // Select the restaurants base on their location (Google Maps)
   selectRestaurantLocation: function(table, vals, cb) {
-    var queryString = "SELECT LOCATION FROM " +table+ ";";
+    var queryString = "SELECT DBA_NAME, LOCATION, LONGITUDE, LATITUDE FROM " +table+ " LIMIT 100;";
     console.log(queryString);
     connection.query(queryString, vals, function(err, result) {
         if (err) {
