@@ -6,28 +6,6 @@
 
 function initMap() {
     
-        var broadway = {
-            info: 'NEW POINT',
-            lat: {{mapData.0.LATITUDE}},
-            long: {{mapData.0.LONGITUDE}}
-        };
-    
-        var belmont = {
-            info: '<strong>Chipotle on Belmont</strong><br>\
-                        1025 W Belmont Ave<br> Chicago, IL 60657<br>\
-                        <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
-            lat: 41.939670,
-            long: -87.655167
-        };
-    
-        var sheridan = {
-            info: '<strong>Chipotle on Sheridan</strong><br>\r\
-                        6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
-                        <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-            lat: 42.002707,
-            long: -87.661236
-        };
-    
         var locations = [
 
 		{{#each mapData}}
