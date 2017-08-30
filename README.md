@@ -32,17 +32,17 @@ With these two indicators, the user now possesses the ability to choose a clean 
 Step By Step
 ---
 Home Page:
-![Imgur](http://i.imgur.com/6UZMSfO.gif)
-
-Using the search:
-![Imgur](http://i.imgur.com/v8Zu2Z9.gif)
+![Imgur](http://i.imgur.com/kmOBaF8.png)
 
 Viewing the results and comments:
-![Imgur](http://i.imgur.com/66nemaV.gif)
+![Imgur](http://i.imgur.com/oTCJcqS.png)
+![Imgur](http://i.imgur.com/9qtsxFS.png)
 
 The Map:
-![Imgur](http://i.imgur.com/kjIGflw.gif)
+![Imgur](http://i.imgur.com/ayGMl2L.png)
 
 Future Add-ons
 ---
-blah blah blah
+User Authentication and Dashboard
+
+Linked Comment section
