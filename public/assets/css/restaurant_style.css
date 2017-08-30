@@ -290,22 +290,23 @@ section{
 }
 
 #welcomeSection{
-    background-color: rgba(106, 187, 8, 0.90);
+    background-color: rgba(106, 187, 8, 0.70);
     color: #ecf0f1;
 
 }
 #whySection{
-    background-color: rgba(241, 196, 15, 0.90);
+    background-color: rgba(241, 196, 15, 0.75);
     color: rgba(206, 99, 9, 1.0);
 }
 
 #chart-info{
-    background-color: rgba(8, 140, 187, 0.90);
+    background-color: rgba(206, 99, 9, 0.50);
     color: #ecf0f1;
 }
 
 #instructionSection{
-    background-color: rgba(206, 99, 9, 0.90);
+
+    background-color: rgba(8, 140, 187, 0.50);
     color: rgba(241, 196, 15, 1.0);
     padding: 5.75rem 9999rem;
 }
@@ -319,6 +320,11 @@ section{
 .instruction-list {
     margin: 0;
     padding: 0;
+}
+.chart-container {
+    background-color: rgba(206, 99, 9, 1);
+    padding: 18px;
+    position: relative;
 }
 
 }
