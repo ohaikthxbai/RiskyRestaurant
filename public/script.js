@@ -1,3 +1,5 @@
+var orm = require("../config/orm.js");
+
 function initMap() {
     
         var broadway = {

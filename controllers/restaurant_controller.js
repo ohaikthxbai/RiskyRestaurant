@@ -8,10 +8,20 @@ router.get("/", function (req, res, next) {
   res.render('../views/index.handlebars');
 });
 
-//Get Method for Homepage
+//Get Method for Homepage (MAPS)
 router.get("/map", function (req, res, next) {
+  var LOCATION = req.params.LOCATION;
+  restaurant.selectRestaurantLocation([
+    "RESTAURANT"
+  ], [
+    LOCATION
+  ], function(data) {
+    console.log(data);
+    //res.render("map", { restaurant: data });
+  })
   res.render('../views/map.handlebars');
 });
+
 
 //Post Method after user clicks submit
 router.post('/restaurant/submit', function (req, res, next) {
