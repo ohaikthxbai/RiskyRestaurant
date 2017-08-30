@@ -16,12 +16,25 @@ router.get("/map", function (req, res, next) {
   ], [
     LOCATION
   ], function(data) {
- //   console.log(data);
-    //res.render("map", { restaurant: data });
-  })
+    // define array
+    var coordinates = [];
+    // stringify data
+    var dataString;
+    // grab only contents within '(' and ')'
+    var dataSlice;
+    // split the data into two coordinates
+    var dataSplit;
+    for (i = 0; i < data.length; i++) {
+      dataString = JSON.stringify(data[i]);
+      dataSlice = dataString.slice(14, 50);
+      dataSplit = dataSlice.split(',');
+      coordinates.push(dataSplit);
+    }
+    //console.log(coordinates);
   res.render('../views/map.handlebars');
+  // hmm
+  return coordinates;
 });
-
 
 //Post Method after user clicks submit
 router.post('/restaurant/submit', function (req, res, next) {
